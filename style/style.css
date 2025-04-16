@@ -1,9 +1,10 @@
-body{
+body {
     min-height: 200vH;
     font-family: 'Montserrat';
     background-color: #2C2C2C;
     opacity: 0; 
     animation: fadeIn 1s ease-out forwards; 
+    color: white;
 }
 @keyframes fadeIn {
     0% {
@@ -13,7 +14,8 @@ body{
         opacity: 1;
     }
 }
-header{
+
+header {
     position: fixed;
     top: 0;
     left: 0;
@@ -22,21 +24,26 @@ header{
     color: #FFD700;
     align-items: center;
     justify-content: space-between;
+    background-color: #2C2C2C;
     padding: 18px;
     border-bottom: 2px solid #FFD700;
 }
-.gauche{
+
+.gauche {
     display: flex;
     align-items: center;
     gap: 8px;
 }
-h1{
+
+h1 {
     font-size: medium;
 }
-.logo{
+
+.logo {
     width: 40px;
     height: 40px;
 }
+
 .centre {
     position: absolute;
     left: 50%;
@@ -48,14 +55,103 @@ h1{
     padding: 14px;
     border-radius: 14px;
 }
-.centre>a{
+
+.centre>.trait {
     text-decoration: none;
     color: #FFD700;
-    transition: text-shadow 0.3s ease;
+    transition-delay: 0,4s;
 }
-.centre>a:hover{
-    text-shadow: 0 0 2px #FFD700, 0 0 5px #FFD700, 0 0 10px #FFA500;
+
+.centre>.trait:hover {
+    color: #FFD700;
+    text-decoration: underline;
+    text-decoration-color: #FFD700;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
 }
-.neon{
-    text-shadow: 0 0 2px #FFD700, 0 0 5px #FFD700, 0 0 10px #FFA500;
+
+.neon {
+    color: #FFD700;
+    text-decoration: underline;
+    text-decoration-color: #FFD700;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
 }
+
+main.electrisez {
+    padding-top: 120px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 50px;
+    padding-right: 50px;
+    flex-wrap: wrap;
+    margin-bottom: 60px;
+}
+
+.texte {
+    max-width: 500px;
+    color: white;
+}
+
+.texte h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.jaune {
+    color: #FFD700;
+    font-weight: bold;
+}
+
+.description {
+    font-size: 1em;
+    margin-bottom: 20px;
+    color: #ccc;
+}
+
+.boutons-intro {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.bouton {
+    background-color: #FFD700;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.bouton:hover {
+    background-color: white;
+    color: #FFD700;
+}
+
+.secondaire {
+    color: white;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 30px;
+    transition: background-color 0.3s;
+}
+
+.secondaire:hover {
+    background-color: #444;
+}
+
+.electrisez > img {
+    width: 600px;
+    height: auto;
+}
+
+.pourquoi {
+    display: grid;
+    place-items: center;
+}
+
+
+
