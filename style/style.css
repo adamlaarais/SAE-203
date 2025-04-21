@@ -5,6 +5,8 @@ body {
     opacity: 0; 
     animation: fadeIn 1s ease-out forwards; 
     color: white;
+    display: flex;
+    flex-direction: column;
 }
 @keyframes fadeIn {
     0% {
@@ -57,17 +59,24 @@ h1 {
 }
 
 .centre>.trait {
-    text-decoration: none;
+    position: relative;
     color: #FFD700;
-    transition-delay: 0,4s;
+    text-decoration: none;
 }
 
-.centre>.trait:hover {
-    color: #FFD700;
-    text-decoration: underline;
-    text-decoration-color: #FFD700;
-    text-decoration-thickness: 2px;
-    text-underline-offset: 4px;
+.centre>.trait::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 2px;
+    background-color: #FFD700;
+    transition: width 0.4s ease;
+}
+
+.centre>.trait:hover::after {
+    width: 100%;
 }
 
 .neon {
@@ -78,7 +87,20 @@ h1 {
     text-underline-offset: 4px;
 }
 
-main.electrisez {
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-top: 2px solid #FFD700;
+    color: #fff;
+}
+
+main {
+    flex: 1;
+}
+
+.electrisez {
     padding-top: 120px;
     display: flex;
     justify-content: space-between;
@@ -94,7 +116,7 @@ main.electrisez {
     color: white;
 }
 
-.texte h2 {
+.texte>h2 {
     font-size: 2em;
     margin-bottom: 10px;
 }
@@ -106,7 +128,6 @@ main.electrisez {
 
 .description {
     font-size: 1em;
-    margin-bottom: 20px;
     color: #ccc;
 }
 
@@ -114,6 +135,7 @@ main.electrisez {
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
+    margin-top: 20px;
 }
 
 .bouton {
@@ -143,15 +165,25 @@ main.electrisez {
     background-color: #444;
 }
 
-.electrisez > img {
+.electrisez>img {
     width: 600px;
     height: auto;
 }
 
 .pourquoi {
-    display: grid;
-    place-items: center;
+    text-align: center;
+    margin-bottom: 60px;
 }
+
+.pourquoi-cube {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+}
+
+
+
+
+
 
 
 
