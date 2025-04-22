@@ -101,7 +101,7 @@ main {
 }
 
 .electrisez {
-    padding-top: 120px;
+    padding-top: 80px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -141,10 +141,11 @@ main {
 .bouton {
     background-color: #FFD700;
     color: white;
-    padding: 12px 20px;
+    padding: 16px 20px;
     border-radius: 30px;
     text-decoration: none;
     font-weight: bold;
+    box-shadow: rgba(45, 45, 45, 0.5) 0px 5px 10px 0px inset;
     transition: background-color 0.3s;
 }
 
@@ -156,8 +157,9 @@ main {
 .secondaire {
     color: white;
     text-decoration: none;
-    padding: 12px 20px;
+    padding: 16px 20px;
     border-radius: 30px;
+    box-shadow: rgba(45, 45, 45, 0.5) 0px 5px 10px 0px inset;
     transition: background-color 0.3s;
 }
 
@@ -178,7 +180,150 @@ main {
 .pourquoi-cube {
     display: grid;
     grid-template-columns: auto auto auto auto;
+    gap: 20px;
+    margin-bottom: 50px;
 }
+
+.cube { 
+    border: solid 2px #FFD700;
+    padding: 24px;
+    border-radius: 15px;
+}
+
+.cube>svg {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+}
+
+.cta {
+    background-color: #FFD700;
+    border-radius: 22px;
+    padding: 60px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.cta-bouton {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.bouton2 {
+    background-color: white;
+    color: #FFD700;
+    padding: 15px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s, transform 0.2s;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.bouton2:hover {
+    background-color: #fffacd;
+    color: #FFD700;
+    transform: scale(1.05);
+}
+
+.marche {
+    padding-top: 80px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.titre {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.badges {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 20px;
+}
+  
+.badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 2px solid #FFD700;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+}
+
+.svg {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+ 
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 40px;
+}
+  
+.card {
+    border: 2px solid #FFD700;
+    border-radius: 12px;
+    padding: 20px;
+    background-color: transparent;
+}
+  
+.titre>h3 {
+    color: #FFD700;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+  
+.card>p {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+  
+.card>ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+  
+.card>li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    margin-bottom: 6px;
+}
+  
+.number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+    font-weight: bold;
+    color: #FFD700;
+    border: 2px solid #FFD700;
+    border-radius: 12px;
+}
+
+.check {
+    display: flex;
+    gap: 10px;
+}
+  
+  
+
 
 
 
