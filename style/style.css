@@ -1,5 +1,5 @@
 body {
-    min-height: 200vH;
+    min-height: 100vH;
     font-family: 'Montserrat';
     background-color: #2C2C2C;
     opacity: 0; 
@@ -284,6 +284,14 @@ main {
     padding: 20px;
     background-color: transparent;
 }
+
+.card2 {
+    border: 2px solid #FFD700;
+    border-radius: 12px;
+    padding: 20px;
+    background-color: transparent;
+    margin-top: 20px;
+}
   
 .titre>h3 {
     color: #FFD700;
@@ -329,6 +337,23 @@ main {
     gap: 10px;
 }
 
+.compte {
+    align-items: center;
+    text-align: center;
+    margin-top: 100px;
+}
+
+.form-container2 {
+    background-color: #ededed;
+    border: 3px solid #ffd700;
+    border-radius: 10px;
+    padding: 30px 40px;
+    max-width: 500px;
+    width: 100%;
+    margin: 30px auto 30px auto; 
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
 .form-container {
     background-color: #ededed;
     border: 3px solid #ffd700;
@@ -336,10 +361,9 @@ main {
     padding: 30px 40px;
     max-width: 500px;
     width: 100%;
-    margin: 120px auto 0 auto; 
+    margin: 30px auto 0 auto; 
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
 }
-  
   
 .reservation-form {
     display: flex;
@@ -392,6 +416,20 @@ input[type="date"] {
 .creer:hover {
     background-color: #2C2C2C;
 }
+
+.reserver {
+    padding-top: 80px;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 50px;
+    padding-right: 50px;
+    flex-wrap: wrap;
+    margin-bottom: 60px;
+    align-items: center;
+}
+
+
+
 
   
   
