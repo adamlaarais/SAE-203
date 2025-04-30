@@ -27,12 +27,27 @@
 
     <main>
       <div class="compte">
-        <h2 class="jaune">Connectez vous à votre compte</h2>
+        <h2 class="jaune">Créer votre compte</h2>
         <div class="description">Rejoignez la révolution de la mobilité électrique</div>
       </div>
         <div class="form-container2">
             <form class="reservation-form">
-              
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="prenom">Prénom</label>
+                  <input type="text" id="prenom" placeholder="Votre prénom">
+                </div>
+                <div class="form-group">
+                  <label for="nom">Nom</label>
+                  <input type="text" id="nom" placeholder="Votre nom">
+                </div>
+              </div>
+        
+              <div class="form-group">
+                <label for="telephone">Téléphone</label>
+                <input type="tel" id="telephone" placeholder="+33 X XX XX XX XX">
+              </div>
+
               <div class="form-group">
                 <label for="email">Email</label>
                 <input type="email" id="email" placeholder="votre@email.com">
@@ -43,10 +58,10 @@
                 <input type="password" id="password" placeholder="Votre mot de passe">
               </div>
 
-              <button class="creer" type="submit">Se connecter à mon compte</button>
+              <button class="creer" type="submit">Créer mon compte</button>
 
               <div class="inscription">
-                <a href="inscription.html">Pas de compte ? S'inscrire</a>
+                <a href="compte.html">Vous avez déjà un compte ? Se connecter</a>
               </div>
             </form>
           </div>

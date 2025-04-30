@@ -428,7 +428,18 @@ input[type="date"] {
     align-items: center;
 }
 
+.inscription>a {
+    color: #2C2C2C;
+    text-decoration: none;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    transition-delay: 0,4s;
+}
 
+.inscription>a:hover {
+    text-decoration: underline;
+}
 
 
   
