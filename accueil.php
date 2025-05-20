@@ -15,13 +15,13 @@
             <h1>.VoltAuto</h1>
         </div>
         <div class="centre">
-            <a href="accueil.html" class="neon">Accueil</a>
-            <a href="vehicule.html" class="trait">Nos Véhicules</a>
-            <a href="plus.html" class="trait">En Savoir Plus</a>
-            <a href="reserver.html" class="trait">Réserver</a>
+            <a href="index.php" class="neon">Accueil</a>
+            <a href="vehicule.php" class="trait">Nos Véhicules</a>
+            <a href="plus.php" class="trait">En Savoir Plus</a>
+            <a href="reserver.php" class="trait">Réserver</a>
         </div>
         <div class="droit">
-            <a href="inscription.html"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#FFD700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></a>
+            <a href="inscription.php"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#FFD700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></a>
         </div>
     </header>
 
@@ -31,8 +31,8 @@
                 <h2><span class="jaune">Électrisez</span> votre expérience de conduite</h2>
                 <div class="description">Location de voitures électriques premium pour une conduite sans émission, économique et ultra-fluide.</div>
                 <div class="boutons-intro">
-                    <a class="bouton" href="reserver.html">Réserver maintenant</a>
-                    <a class="secondaire" href="vehicule.html">Voir nos véhicules</a>
+                    <a class="bouton" href="reserver.php">Réserver maintenant</a>
+                    <a class="secondaire" href="vehicule.php">Voir nos véhicules</a>
                 </div>
             </div>
                 <img src="img/voiture.png" alt="voiture tesla">
@@ -78,7 +78,7 @@
             <div>Location flexible à partir d'une journée, et réservation en ligne en moins de 2 minutes.</div>
             <div>Rejoignez les milliers de conducteurs qui ont déjà fait le switch vers l'électrique avec VoltAuto.</div>
             <div class="cta-bouton">
-                <a class="bouton2" href="reserver.html">Réserver maintenant</a>
+                <a class="bouton2" href="reserver.php">Réserver maintenant</a>
             </div>
         </div>
     </main>

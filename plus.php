@@ -15,13 +15,13 @@
             <h1>.VoltAuto</h1>
         </div>
         <div class="centre">
-            <a href="accueil.html" class="trait">Accueil</a>
-            <a href="vehicule.html" class="trait">Nos Véhicules</a>
-            <a href="plus.html" class="neon">En Savoir Plus</a>
-            <a href="reserver.html" class="trait">Réserver</a>
+            <a href="accueil.php" class="trait">Accueil</a>
+            <a href="vehicule.php" class="trait">Nos Véhicules</a>
+            <a href="plus.php" class="neon">En Savoir Plus</a>
+            <a href="reserver.php" class="trait">Réserver</a>
         </div>
         <div class="droit">
-          <a href="compte.html"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#FFD700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></a>
+          <a href="compte.php"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#FFD700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></a>
       </div>
     </header>
     
@@ -163,7 +163,7 @@
             <div>Location flexible à partir d'une journée, et réservation en ligne en moins de 2 minutes.</div>
             <div>Rejoignez les milliers de conducteurs qui ont déjà fait le switch vers l’électrique avec VoltAuto.</div>
             <div class="cta-bouton">
-                <a class="bouton2" href="reserver.html">Réserver maintenant</a>
+                <a class="bouton2" href="reserver.php">Réserver maintenant</a>
             </div>
         </div>
     </main>

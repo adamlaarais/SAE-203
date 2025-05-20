@@ -2,12 +2,15 @@ body {
     min-height: 100vH;
     font-family: 'Montserrat';
     background-color: #2C2C2C;
-    opacity: 0; 
+    background-image: linear-gradient(#FFD70010 1px, transparent 1px),
+                      linear-gradient(90deg, #FFD70010 1px, transparent 1px);
+    background-size: 60px 60px;
     animation: fadeIn 1s ease-out forwards; 
     color: white;
     display: flex;
     flex-direction: column;
     margin: 0;
+    
 }
 
 @keyframes fadeIn {
@@ -28,7 +31,6 @@ header {
     color: #FFD700;
     align-items: center;
     justify-content: space-between;
-    background-color: #2C2C2C;
     padding: 18px;
     border-bottom: 2px solid #FFD700;
 }
@@ -110,17 +112,16 @@ main {
 .electrisez {
     padding-top: 80px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    padding-left: 50px;
-    padding-right: 50px;
-    flex-wrap: wrap;
     margin-bottom: 60px;
+    gap: 60px;
 }
 
 .texte {
-    max-width: 500px;
     color: white;
+    flex: 1 1 400px;             
+    max-width: 500px;
 }
 
 .texte>h2 {
@@ -175,7 +176,7 @@ main {
 }
 
 .electrisez>img {
-    width: 600px;
+    width: 900px;
     height: auto;
 }
 
@@ -359,6 +360,7 @@ main {
     border: 3px solid #ffd700;
     border-radius: 10px;
     padding: 30px 40px;
+    flex: 1 1 400px;             
     max-width: 500px;
     width: 100%;
     margin: 30px auto 0 auto; 
@@ -380,6 +382,7 @@ main {
     flex: 1;
     display: flex;
     flex-direction: column;
+    margin-bottom: 10px;
 }
   
 label {
@@ -417,15 +420,15 @@ input[type="date"] {
     background-color: #2C2C2C;
 }
 
-.reserver {
-    padding-top: 80px;
+main>.reserver {
     display: flex;
-    justify-content: space-between;
-    padding-left: 50px;
-    padding-right: 50px;
-    flex-wrap: wrap;
-    margin-bottom: 60px;
-    align-items: center;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 80px;
+    padding-top: 180px;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .inscription>a {
@@ -435,10 +438,15 @@ input[type="date"] {
     display: flex;
     justify-content: center;
     transition-delay: 0,4s;
+    margin-top: 10px;
 }
 
 .inscription>a:hover {
     text-decoration: underline;
+}
+
+main>.compte {
+    padding-top: 40px;
 }
 
 

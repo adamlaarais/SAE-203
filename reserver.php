@@ -1,3 +1,36 @@
+<?php
+  // TRAITEMENT DU FORMULAIRE
+  // Initialisation des chaines de caractères
+
+
+  // Initialisation des variables
+  if(!empty($_POST["prenom"]))
+    $prenom = $_POST["prenom"];
+  else
+    $prenom = '';
+
+  if(!empty($_POST["nom"]))
+    $nom = $_POST["nom"];
+  else
+    $nom = '';
+
+  if(!empty($_POST["telephone"]))
+    $telephone = $_POST["telephone"];
+  else
+    $telephone = '';
+
+  if(!empty($_POST["email"]))
+    $email = $_POST["email"];
+  else
+    $email = '';
+
+  if(!empty($_POST["modele"]))
+    $modele = $_POST["modele"];
+  else
+    $modele = '';
+
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -15,13 +48,13 @@
             <h1>.VoltAuto</h1>
         </div>
         <div class="centre">
-            <a href="accueil.html" class="trait">Accueil</a>
-            <a href="vehicule.html" class="trait">Nos Véhicules</a>
-            <a href="plus.html" class="trait">En Savoir Plus</a>
-            <a href="reserver.html" class="neon">Réserver</a>
+            <a href="accueil.php" class="trait">Accueil</a>
+            <a href="vehicule.php" class="trait">Nos Véhicules</a>
+            <a href="plus.php" class="trait">En Savoir Plus</a>
+            <a href="reserver.php" class="neon">Réserver</a>
         </div>
         <div class="droit">
-            <a href="compte.html"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#FFD700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></a>
+            <a href="compte.php"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#FFD700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></a>
         </div>
     </header> 
 
@@ -46,39 +79,45 @@
               </svg>
               <h3>Annulation rapide</h3>
             </div>
-          <div>Annulation, gratuite jusqu’à 24h avant le début de votre location. Politique flexible pour votre tranquilité d’esprit.</div>
+          <div>Annulation, gratuite jusqu'à 24h avant le début de votre location. Politique flexible pour votre tranquilité d’esprit.</div>
           </div>
         </div>
-      
+
+        <form action="<?= $_SERVER['PHP_SELF'] ?>" method="post">
         <div class="form-container">
         <form class="reservation-form">
           <div class="form-row">
             <div class="form-group">
               <label for="prenom">Prénom</label>
-              <input type="text" id="prenom" placeholder="Votre prénom">
+              <input type="text" name="prenom" value="<?= $prenom ?>" placeholder="Votre prénom">
             </div>
             <div class="form-group">
               <label for="nom">Nom</label>
-              <input type="text" id="nom" placeholder="Votre nom">
+              <input type="text" name="nom" value="<?= $nom ?>" placeholder="Votre nom">
             </div>
           </div>
     
           <div class="form-group">
             <label for="email">Email</label>
-            <input type="email" id="email" placeholder="votre@email.com">
+            <input type="email" name="email" value="<?= $email ?>" placeholder="votre@email.com">
           </div>
     
           <div class="form-group">
             <label for="telephone">Téléphone</label>
-            <input type="tel" id="telephone" placeholder="+33 X XX XX XX XX">
+            <input type="tel" name="telephone" value="<?= $telephone ?>" placeholder="+33 X XX XX XX XX">
           </div>
     
           <div class="form-group">
             <label for="vehicule">Véhicule souhaité</label>
-            <select id="vehicule">
-              <option value="">Sélectionnez un véhicule</option>
-              <option value="voiture1">Voiture 1</option>
-              <option value="voiture2">Voiture 2</option>
+            <select name="modele">
+            <option></option>
+
+            <option value="TESLA"
+            <?php
+            if ($modele == "TESLA")
+            echo "selected";
+            ?>
+            >TESLA</option>
             </select>
           </div>
     
@@ -93,10 +132,11 @@
             </div>
           </div>
     
-          <button class="creer" type="submit">Réserver votre véhicule</button>
+          <button class="creer" type="clic" value="ok">Réserver votre véhicule</button>
         </form>
       </div>
     </div>
+    </form>
     </main>
 
     <footer>
