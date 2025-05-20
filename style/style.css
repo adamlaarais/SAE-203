@@ -114,12 +114,12 @@ main {
 }
 
 .electrisez {
-    padding-top: 80px;
+    margin-top: 80px;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 60px;
-    gap: 40px;
+    gap: 20px;
 }
 
 .texte {
