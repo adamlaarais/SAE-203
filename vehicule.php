@@ -1,30 +1,37 @@
 <?php
-  // ****** ACCES AUX DONNEES ******
-  // Connexion à la base de données
-  try   
-  {
+// Connexion à la base de données
+try {
     $options = array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8");
     $bdd = new PDO('mysql:host=localhost;dbname=sae_203', 'root', '', $options);
-  }
-  catch(Exception $err)
-  {
+} catch(Exception $err) {
     die('Erreur connexion MySQL : ' . $err->getMessage());
-  } 
+}
 
-  // Envoi de la requête SQL
-  $reponse = $bdd->query("SELECT * FROM vehicule");
+// Récupération des données pour les menus déroulants
+$vehicule = $bdd->query("SELECT * FROM vehicule")->fetchAll(PDO::FETCH_ASSOC);
 
-  // Lecture de toutes les lignes de la réponse dans un tableau associatif
-  $table = $reponse->fetchAll(PDO::FETCH_ASSOC);
+$bdd = null; // Fermeture de la connexion
 
-  $bdd = null;                
-  
-  // Fin de la connexion
+// Génération du HTML
+$resultat = '<div class="pourquoi-cube">';
+foreach($vehicule as $v) {
+    $marque = $v['marque'];
+    $image = 'img/' . $v['logo_marque'];
+    $modele = $v['modele'];
+    $description = $v['description'];
+    $prix = $v['prix'];
 
-  // ****** PREPARATION DES DONNEES ******
-  $image = "img/ ". $vehicule['logo_marque'];
-  $resultat = $image;
+    $resultat .= '<div class="cube">';
+    $resultat .= '<div class="logo" style="background-image: url(\'' . $image . '\')"></div>';
+    $resultat .= '<h3 class="jaune">' . $marque . ' ' . $modele . '</h3>';
+    $resultat .= '<div>' . $prix . '€/jour</div>';
+    $resultat .= '<div class="description">' . $description . '</div>';
+    $resultat .= '<a class="bouton" href="reserver.php">Réserver maintenant</a>';
+    $resultat .= '</div>';
+}
+$resultat .= '</div>';
 ?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
