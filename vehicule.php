@@ -7,26 +7,27 @@ try {
     die('Erreur connexion MySQL : ' . $err->getMessage());
 }
 
-// Récupération des données pour les menus déroulants
+// Récupération des données
 $vehicule = $bdd->query("SELECT * FROM vehicule")->fetchAll(PDO::FETCH_ASSOC);
 
-$bdd = null; // Fermeture de la connexion
+$bdd = null; 
+// Fermeture de la connexion
 
 // Génération du HTML
-$resultat = '<div class="pourquoi-cube">';
+$resultat = '<div class="vehicule">';
 foreach($vehicule as $v) {
     $marque = $v['marque'];
-    $image = 'img/' . $v['logo_marque'];
+    $image = 'img/' . $v['image'];
     $modele = $v['modele'];
     $description = $v['description'];
     $prix = $v['prix'];
 
-    $resultat .= '<div class="cube">';
-    $resultat .= '<div class="logo" style="background-image: url(\'' . $image . '\')"></div>';
+    $resultat .= '<div class="v">';
+    $resultat .= '<div class="car-image" style="background-image: url(\'' . $image . '\');"></div>';
     $resultat .= '<h3 class="jaune">' . $marque . ' ' . $modele . '</h3>';
-    $resultat .= '<div>' . $prix . '€/jour</div>';
-    $resultat .= '<div class="description">' . $description . '</div>';
-    $resultat .= '<a class="bouton" href="reserver.php">Réserver maintenant</a>';
+    $resultat .= '<div class="sous-titre"><span class="jaune">' . $prix . '€</span> /jour</div>';
+    $resultat .= '<p class="description">' . $description . '</p>';
+    $resultat .= '<a class="bouton-car" href="reserver.php">Réserver Maintenant</a>';
     $resultat .= '</div>';
 }
 $resultat .= '</div>';
