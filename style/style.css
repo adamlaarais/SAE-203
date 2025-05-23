@@ -491,7 +491,7 @@ main>.compte {
     grid-template-columns: repeat(2, 1fr); 
     gap: 32px; 
     padding: 32px;
-    margin-top: 100px;
+    margin-top: 20px;
 }
 
 .v {
@@ -551,8 +551,33 @@ main>.compte {
     padding: 16px;
 }
 
-  
-  
+.zoneFiltres {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 140px;
+  margin-left: 40px;
+}
+
+.zoneFiltres a {
+  background-color: #FFD700;
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: 2px solid #FFD700;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.zoneFiltres a:hover,
+.zoneFiltres a.active {
+  background-color: #2C2C2C;
+  color: #FFD700;
+  border-color: #FFD700;
+}
+
+
+
 
 
 

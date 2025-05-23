@@ -7,19 +7,30 @@ try {
     die('Erreur connexion MySQL : ' . $err->getMessage());
 }
 
-// Récupération des données
-$vehicule = $bdd->query("SELECT * FROM vehicule")->fetchAll(PDO::FETCH_ASSOC);
+// Paramètres de tri (venant de l'URL)
+$tri = isset($_GET['tri']) ? $_GET['tri'] : 'marque';
+$ordre = isset($_GET['ordre']) ? $_GET['ordre'] : 'ASC';
 
-$bdd = null; 
-// Fermeture de la connexion
+// Sécurisation des paramètres
+$colonnes_autorisees = ['marque', 'modele', 'prix'];
+$ordres_autorises = ['ASC', 'DESC'];
 
-// Génération du HTML
+if (!in_array($tri, $colonnes_autorisees)) $tri = 'marque';
+if (!in_array($ordre, $ordres_autorises)) $ordre = 'ASC';
+
+// Requête SQL
+$requete = $bdd->prepare("SELECT * FROM vehicule ORDER BY $tri $ordre");
+$requete->execute();
+$vehicules = $requete->fetchAll(PDO::FETCH_ASSOC);
+$bdd = null;
+
+// Génération HTML
 $resultat = '<div class="vehicule">';
-foreach($vehicule as $v) {
-    $marque = $v['marque'];
+foreach($vehicules as $v) {
     $image = 'img/' . $v['image'];
-    $modele = $v['modele'];
+    $marque = $v['marque'];
     $description = $v['description'];
+    $modele = $v['modele'];
     $prix = $v['prix'];
 
     $resultat .= '<div class="v">';
@@ -37,11 +48,11 @@ $resultat .= '</div>';
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VoltAuto</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/style.css">
-    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
-    <link rel="shortcut icon" href="img/logo.jpg" type="img/jpeg">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="shortcut icon" href="img/logo.jpg" type="image/jpeg">
 </head>
 <body>
     <header>
@@ -56,14 +67,25 @@ $resultat .= '</div>';
             <a href="reserver.html" class="trait">Réserver</a>
         </div>
         <div class="droit">
-            <a href="inscription.php"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#FFD700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></a>
+            <a href="inscription.php">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="none" stroke="#FFD700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                    <circle cx="12" cy="7" r="4"/>
+                </svg>
+            </a>
         </div>
     </header>
 
     <main class="resultat">
-        <?= $resultat?>
+        <div class="zoneFiltres">
+            <a href="?tri=marque&ordre=ASC" class="<?= ($tri === 'marque' && $ordre === 'ASC') ? 'active' : '' ?>">Marque (A-Z)</a>
+            <a href="?tri=marque&ordre=DESC" class="<?= ($tri === 'marque' && $ordre === 'DESC') ? 'active' : '' ?>">Marque (Z-A)</a>
+            <a href="?tri=prix&ordre=ASC" class="<?= ($tri === 'prix' && $ordre === 'ASC') ? 'active' : '' ?>">Prix (Croissant)</a>
+            <a href="?tri=prix&ordre=DESC" class="<?= ($tri === 'prix' && $ordre === 'DESC') ? 'active' : '' ?>">Prix (Décroissant)</a>
+        </div>
+        <?= $resultat ?>
     </main>
-    
+
     <footer>
         <div>2025 VoltAuto. Tous droits réservés.</div>
         <div class="legalite">
