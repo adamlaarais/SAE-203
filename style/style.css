@@ -27,6 +27,7 @@ header {
     top: 0;
     left: 0;
     right: 0;
+    z-index: 1000;
     display: flex;
     background-color: #2C2C2C;
     background-image: linear-gradient(#FFD70010 1px, transparent 1px),
@@ -529,7 +530,7 @@ main>.compte {
     background-color: #2C2C2C;
     color: #FFD700;
     border: solid #FFD700;
-    padding: 20px;
+    padding: 28px;
 }
 
 .bouton3 {
@@ -550,40 +551,60 @@ main>.compte {
     border: solid #FFD700;
     padding: 16px;
 }
+.resultat {
+    margin-top: 120px;
+}
 
+.filtresContainer {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-left: 40px;
+}
+
+/* Style de base des filtres (cachés) */
 .zoneFiltres {
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
-  margin-top: 140px;
-  margin-left: 40px;
+  transform: translateX(100%);
+  opacity: 0;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  pointer-events: none; /* empêche les clics lorsqu'invisible */
+}
+
+/* Filtres visibles (glissent vers la gauche pour apparaître) */
+.zoneFiltres.visible {
+  transform: translateX(0);
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .zoneFiltres a {
   background-color: #FFD700;
   color: #ffffff;
-  padding: 10px 20px;
+  padding: 10px 50px;
   border-radius: 8px;
   border: 2px solid #FFD700;
   font-weight: bold;
   text-decoration: none;
-  transition: 0.3s;
+  transition: background-color 0.3s, color 0.3s;
 }
+
 .zoneFiltres a:hover,
 .zoneFiltres a.active {
   background-color: #2C2C2C;
   color: #FFD700;
   border-color: #FFD700;
 }
+#toggleFiltres {
+  cursor: pointer;
+  transition: 0.3s ease;
+  filter: drop-shadow(0 0 2px #FFD700); 
+}
 
-
-
-
-
-
-
-
-
-
-
+#toggleFiltres:hover {
+  filter: drop-shadow(0 0 2px #FFD700); 
+  transform: scale(1.2); 
+}
 
