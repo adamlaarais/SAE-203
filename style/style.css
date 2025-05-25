@@ -311,7 +311,7 @@ main {
  
 .grid-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: auto auto;
     gap: 20px;
     padding: 40px;
 }
@@ -368,6 +368,7 @@ main {
     color: #FFD700;
     border: 2px solid #FFD700;
     border-radius: 12px;
+    width: 100%;
 }
 
 .check {

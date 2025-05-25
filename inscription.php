@@ -65,8 +65,6 @@ if (isset($_POST["clic"])) {
             $erreur = "Échec lors de la création du compte";
         }
     }
-} else {
-    $resultat = "Veuillez compléter le formulaire";
 }
 ?>
 <!DOCTYPE html>
