@@ -152,21 +152,20 @@ main {
 }
 
 .bouton {
-    background-color: #FFD700;
-    color: white;
     padding: 18px;
     border-radius: 30px;
     text-decoration: none;
     font-weight: bold;
     box-shadow: rgba(45, 45, 45, 0.5) 0px 5px 10px 0px inset;
     transition: background-color 0.3s;
-}
-
-.bouton:hover {
     background-color: #2C2C2C;
     color: #FFD700;
     border: solid #FFD700;
-    padding: 16px;
+}
+
+.bouton:hover {
+    background-color: #FFD700;
+    color: white;
 }
 
 .secondaire {
@@ -438,9 +437,7 @@ input[type="date"] {
 }
 
 .creer {
-    background-color: #FFD700;
-    color: white;
-    padding: 18px;
+    padding: 17px;
     border-radius: 30px;
     text-decoration: none;
     text-align: center;
@@ -450,13 +447,14 @@ input[type="date"] {
     transition: background-color 0.3s;
     font-family: 'Montserrat';
     width: 100%;
-}
-
-.creer:hover {
     background-color: #2C2C2C;
     color: #FFD700;
     border: solid #FFD700 1px;
-    padding: 17px;
+}
+
+.creer:hover {
+    background-color: #FFD700;
+    color: white;
 }
 
 .reserver {
@@ -467,20 +465,6 @@ input[type="date"] {
     margin-top: 140px;
     margin-bottom: 80px;
     max-width: 1200px;
-}
-
-.inscription>a {
-    color: #ffffff;
-    text-decoration: none;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    transition-delay: 0,4s;
-    margin-top: 10px;
-}
-
-.inscription>a:hover {
-    text-decoration: underline;
 }
 
 main>.compte {
@@ -516,27 +500,29 @@ main>.compte {
 }
 
 .bouton-car {
-    background-color: #FFD700;
-    color: white;
     text-align: center;
     padding: 18px;
     border-radius: 30px;
     text-decoration: none;
     font-weight: bold;
     transition: all 0.4s ease;
-}
-
-.bouton-car:hover {
     background-color: #2C2C2C;
     color: #FFD700;
     border: solid #FFD700;
+}
+
+.bouton-car:hover {
+    background-color: #FFD700;
+    color: white;
+    box-shadow: rgba(45, 45, 45, 0.5) 0px 5px 10px 0px inset;
     padding: 28px;
 }
 
 .bouton3 {
-    background-color: #FFD700;
     width: 100%;
-    color: white;
+    background-color: #2C2C2C;
+    color: #FFD700;
+    border: solid #FFD700;
     padding: 18px;
     border-radius: 30px;
     text-decoration: none;
@@ -546,10 +532,8 @@ main>.compte {
 }
 
 .bouton3:hover {
-    background-color: #2C2C2C;
-    color: #FFD700;
-    border: solid #FFD700;
-    padding: 16px;
+    color: white;
+    background-color: #FFD700;
 }
 .resultat {
     margin-top: 120px;
@@ -581,11 +565,11 @@ main>.compte {
 }
 
 .zoneFiltres a {
-  background-color: #FFD700;
-  color: #ffffff;
+  background-color: #2C2C2C;
+  color: #FFD700;
+  border: 2px solid #FFD700;
   padding: 10px 50px;
   border-radius: 8px;
-  border: 2px solid #FFD700;
   font-weight: bold;
   text-decoration: none;
   transition: background-color 0.3s, color 0.3s;
@@ -593,9 +577,9 @@ main>.compte {
 
 .zoneFiltres a:hover,
 .zoneFiltres a.active {
-  background-color: #2C2C2C;
-  color: #FFD700;
-  border-color: #FFD700;
+  background-color: #FFD700;
+  color: #ffffff;
+  box-shadow: rgba(45, 45, 45, 0.5) 0px 5px 10px 0px inset;
 }
 #toggleFiltres {
   cursor: pointer;
@@ -608,3 +592,26 @@ main>.compte {
   transform: scale(1.2); 
 }
 
+.succes {
+    color: #3a3200;
+    background-color: #fff8c4;
+    border: 1px solid #f2e189;
+    padding: 12px 20px;
+    border-radius: 5px;
+    margin: 20px auto;
+    max-width: 500px;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+}
+
+.erreur {
+    color: #721c24;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    padding: 12px 20px;
+    border-radius: 5px;
+    margin: 20px auto;
+    max-width: 500px;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+}
