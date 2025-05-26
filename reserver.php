@@ -1,4 +1,10 @@
 <?php
+require "fonctions_BDD.php";
+
+// Initialisation
+$resultat = "";
+$erreur = "";
+
   if(!empty($_POST["prenom"]))
     $prenom = $_POST["prenom"];
   else
@@ -24,6 +30,58 @@
   else
     $modele = '';
 
+  if(!empty($_POST["date_de_debut"]))
+    $date_de_debut = $_POST["date_de_debut"];
+  else
+    $date_de_debut = '';
+
+  if(!empty($_POST["date_de_fin"]))
+    $date_de_fin = $_POST["date_de_fin"];
+  else
+    $date_de_fin = '';
+
+  // Traitement du formulaire
+if (isset($_POST["clic"])) {
+    if (empty($nom) || is_numeric($nom)) {
+        $erreur .= "Veuillez entrer un nom valide<br>";
+    }
+
+    if (empty($prenom) || is_numeric($prenom)) {
+        $erreur .= "Veuillez entrer un prénom valide<br>";
+    }
+
+    if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $erreur .= "Veuillez entrer un email valide<br>";
+    }
+
+    if (empty($telephone) || !is_numeric($telephone)) {
+        $erreur .= "Veuillez entrer un téléphone valide (uniquement des chiffres)<br>";
+    }
+
+    if (empty($modele)) {
+        $erreur .= "Veuillez séléctionner un modèle<br>";
+    }
+
+    if (empty($date_de_debut)) {
+        $erreur .= "Veuillez séléctionner une date de début <br>";
+    }
+
+    if (empty($date_de_fin) || $date_de_fin < $date_de_debut)  {
+        $erreur .= "Veuillez séléctionner une date de fin correct <br>";
+    }
+   
+      if (empty($erreur)) {
+        $requete = "INSERT INTO reservation (modele, date_de_debut, date_de_fin) 
+                    VALUES ('$modele', '$date_de_debut', '$date_de_fin')";
+        $nb = ecritureBDD($requete);
+
+        if ($nb == 1) {
+            $resultat = "<div class='succes'>Réservation confirmée pour <span class='jaune'>$prenom $nom</span> du <span class='jaune'>$date_de_debut</span> au <span class='jaune'>$date_de_fin</span> avec la voiture : <span class='jaune'>$modele</span></div>";
+        } else {
+            $erreur = "Erreur lors de l'enregistrement de la réservation.";
+        }
+    }
+    }
 ?>
 
 <!DOCTYPE html>
@@ -53,7 +111,7 @@
         </div>
     </header> 
 
-   <main>
+   <main class="animate-on-scroll">
   <div class="reserver">
     <div class="texte">
       <h2>Réservez votre <span class="jaune">VoltAuto</span> dès maintenant</h2>
@@ -111,30 +169,84 @@
 
         <div class="form-group">
           <label for="vehicule">Véhicule souhaité</label>
-          <select name="modele">
-            <option></option>
-            <option value="TESLA" <?= $modele == "TESLA" ? "selected" : "" ?>>TESLA</option>
-          </select>
+            <select name="modele">
+          <option></option>
+          <option value="i3" 
+            <?php 
+              if ($modele == "i3") 
+                echo "selected";
+            ?>
+          >BMW I3</option>
+          <option value="iX" 
+            <?php 
+              if ($modele == "iX") 
+                echo "selected";
+            ?>
+          >BMW IX</option>
+          <option value="Leaf" 
+            <?php 
+              if ($modele == "Leaf") 
+                echo "selected";
+            ?>
+          >Nissan Leaf</option>
+           <option value="Ariya" 
+            <?php 
+              if ($modele == "Ariya") 
+                echo "selected";
+            ?>
+          >Nissan Ariya</option>
+         <option value="ID.3" 
+            <?php 
+              if ($modele == "ID.3") 
+                echo "selected";
+            ?>
+          >Volkswagen ID.3</option>
+          <option value="ID.4" 
+            <?php 
+              if ($modele == "ID.4") 
+                echo "selected";
+            ?>
+          >Volkswagen ID.4</option>
+          <option value="Model 3" 
+            <?php 
+              if ($modele == "Model 3") 
+                echo "selected";
+            ?>
+          >Tesla Model 3</option>
+          <option value="Model X" 
+            <?php 
+              if ($modele == "Model X") 
+                echo "selected";
+            ?>
+          >Tesla Model X</option>
+           </select>
         </div>
 
         <div class="form-row">
           <div class="form-group">
             <label for="date-debut">Date de début</label>
-            <input type="date" id="date-debut" name="date_debut">
+            <input type="date" id="date_de_debut" name="date_de_debut" value="<?= $date_de_debut ?>">
           </div>
           <div class="form-group">
             <label for="date-fin">Date de fin</label>
-            <input type="date" id="date-fin" name="date_fin">
+            <input type="date" id="date_de_fin" name="date_de_fin" value="<?= $date_de_fin ?>">
           </div>
         </div>
 
-        <button class="creer" type="clic" value="ok">Réserver votre véhicule</button>
+        <button class="creer" type="submit" name="clic" value="ok">Réserver votre véhicule</button>
       </div>
     </form>
   </div>
+  <?php
+  if (!empty($erreur)) {
+      echo "<div class='erreur'>$erreur</div>";
+  } else if (!empty($resultat)) {
+      echo "<div class='succes'>$resultat</div>";
+  }
+  ?>
 </main>
 
-    <footer>
+    <footer class="animate-on-scroll">
         <div>2025 VoltAuto. Tous droits réservés.</div>
         <div class="legalite">
             <div>Mentions légales</div>
@@ -142,5 +254,6 @@
             <div>CGV</div>
         </div>
     </footer>
+<script src="js/anim.js"></script>
 </body>
 </html>

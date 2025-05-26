@@ -93,6 +93,14 @@ h1 {
     align-items: center;
 }
 
+.droit a svg {
+    transition: transform 0.3s ease; 
+}
+
+.droit a:hover svg {
+    transform: scale(1.2); 
+}
+
 .neon {
     color: #FFD700;
     text-decoration: underline;
@@ -330,7 +338,7 @@ main {
     background-color: transparent;
     margin-top: 20px;
 }
-  
+
 .titre>h3 {
     color: #FFD700;
     display: flex;
@@ -615,4 +623,16 @@ main>.compte {
     max-width: 500px;
     font-family: 'Montserrat', sans-serif;
     text-align: center;
+}
+/* État initial : éléments cachés et décalés vers le bas */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* Quand on ajoute la classe 'visible', l’élément apparaît et remonte à sa place */
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
 }

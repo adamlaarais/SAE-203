@@ -60,7 +60,7 @@ if (isset($_POST["clic"])) {
         $nb_ecriture = ecritureBDD($requete);
 
         if ($nb_ecriture == 1) {
-            $resultat = "<div class='description'>Bienvenue dans l'équipe VoltAuto <span class='jaune'>$prenom $nom</span></div>";
+            $resultat = "<div>Bienvenue dans l'équipe VoltAuto <span class='jaune'>$prenom $nom</span></div>";
         } else {
             $erreur = "Échec lors de la création du compte";
         }
@@ -99,7 +99,7 @@ if (isset($_POST["clic"])) {
         </div>
     </header>
 
-    <main>
+    <main class="animate-on-scroll">
         <div class="compte">
             <h2 class="jaune">Créer votre compte</h2>
             <div class="description">Rejoignez la révolution de la mobilité électrique</div>
@@ -146,7 +146,7 @@ if (isset($_POST["clic"])) {
         ?>
     </main>
 
-    <footer>
+    <footer class="animate-on-scroll">
         <div>2025 VoltAuto. Tous droits réservés.</div>
         <div class="legalite">
             <div>Mentions légales</div>
@@ -154,5 +154,6 @@ if (isset($_POST["clic"])) {
             <div>CGV</div>
         </div>
     </footer>
+<script src="js/anim.js"></script>
 </body>
 </html>
