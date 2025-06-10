@@ -84,7 +84,7 @@ if (isset($_POST["clic"])) {
             <h1>.VoltAuto</h1>
         </div>
         <div class="centre">
-            <a href="accueil.html" class="trait">Accueil</a>
+            <a href="index.html" class="trait">Accueil</a>
             <a href="vehicule.php" class="trait">Nos Véhicules</a>
             <a href="plus.html" class="trait">En Savoir Plus</a>
             <a href="reserver.php" class="trait">Réserver</a>

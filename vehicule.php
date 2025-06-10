@@ -61,7 +61,7 @@ $resultat .= '</div>';
             <h1>.VoltAuto</h1>
         </div>
         <div class="centre">
-            <a href="accueil.html" class="trait">Accueil</a>
+            <a href="index.html" class="trait">Accueil</a>
             <a href="vehicule.php" class="neon">Nos Véhicules</a>
             <a href="plus.html" class="trait">En Savoir Plus</a>
             <a href="reserver.php" class="trait">Réserver</a>
